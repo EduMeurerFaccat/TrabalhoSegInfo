@@ -1,0 +1,38 @@
+{
+  "name": "trabalhoseginfo",
+  "version": "1.0.0",
+  "description": "Sistema Web de cadastro de currículos.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduMeurerFaccat/TrabalhoSegInfo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EduMeurerFaccat/TrabalhoSegInfo/issues"
+  },
+  "homepage": "https://github.com/EduMeurerFaccat/TrabalhoSegInfo#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-session": "^2.0.0",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "helmet": "^5.1.0",
+    "sequelize": "^6.21.0",
+    "sqlite-crypto": "^1.1.0",
+    "sqlite3": "^5.0.8",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "nodemon": "^2.0.18"
+  }
+}
