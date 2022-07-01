@@ -1,12 +1,13 @@
 import express from 'express';
 import session from 'cookie-session'
 import handlebars from 'express-handlebars';
-import {body, validationResult} from 'express-validator';
+import { body, param, query, validationResult } from 'express-validator';
 import helmet from 'helmet';
 import flash from 'connect-flash';
 import { CadastroController } from './controller/cadastroController.js';
 import { MainController } from './controller/mainController.js';
-import crypto, { randomBytes } from 'node:crypto'
+import crypto, { randomBytes, verify } from 'node:crypto'
+import { verifyToken } from './helpers/middlewares.js';
 
 var app = express();
 
@@ -28,12 +29,11 @@ app.use(session({
         path: '/',
         expires: new Date(Date.now() + 60 * 60 * 1000) // 1 hora
     }
-    
 }));
 app.use(flash());
 
-app.use(express.urlencoded({extended:false}));
-
+app.use(express.urlencoded({extended:true}));
+app.use(express.static('public'));
 
 
 //Main Controller
@@ -44,8 +44,16 @@ app.get("/", MainController.get);
 
 
 app.get("/cadastro", CadastroController.get);
+app.get("/getListarUm", CadastroController.getListarUm);
+
+app.get("/listarUm",
+query("email").isEmail().trim().escape(),
+query("nome").not().isEmpty().trim().escape(),
+CadastroController.listarUm
+);
 
 app.post("/cadastro",
+verifyToken,
 body("email").isEmail().normalizeEmail(),
 body("nome").not().isEmpty().trim().escape(),
 body("enderecoWeb").isURL(),

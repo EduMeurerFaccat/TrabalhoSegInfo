@@ -2,26 +2,29 @@
   <input type="hidden" name="token" value="{{token}}" />
   <div class="form-group">
     <label for="nome">Nome: </label>
-    <input type="text" class="form-control" id="nome" name="nome"  placeholder="Informe nome">
+    <input type="text" class="form-control" value="{{pessoa.nome}}" id="nome" name="nome" placeholder="Informe nome">
     <!--<small id="emailHelp" name="emailHelp"  class="form-text text-muted"></small>-->
   </div>
   <div class="form-group">
     <label for="email">E-mail</label>
-    <input type="email" class="form-control" id="email" name="email"  aria-describedby="emailHelp" placeholder="Informe email">
+    <input type="email" class="form-control" value="{{pessoa.email}}" id="email" name="email"
+      aria-describedby="emailHelp" placeholder="Informe email">
     <!--<small id="emailHelp" name="emailHelp"  class="form-text text-muted"></small>-->
   </div>
   <div class="form-group">
-    <label for="telefone">E-mail</label>
-    <input type="number" class="form-control" id="telefone" name="telefone"  placeholder="Informe telefone">
+    <label for="telefone">Telefone</label>
+    <input type="number" value="{{pessoa.telefone}}" class="form-control" id="telefone" name="telefone"
+      placeholder="Informe telefone">
     <!--<small id="emailHelp" name="emailHelp"  class="form-text text-muted"></small>-->
   </div>
   <div class="form-group">
     <label for="enderecoWeb">Endereço WEB</label>
-    <input type="url" class="form-control" id="enderecoWeb" name="enderecoWeb"  placeholder="Endereço WEB">
+    <input type="url" class="form-control" id="enderecoWeb" value="{{pessoa.enderecoWeb}}" name="enderecoWeb"
+      placeholder="Endereço WEB">
   </div>
   <div class="form-group">
     <label for="experienciaProfissional">Experiencia Profissional</label>
-    <textarea class="form-control" id="experienciaProfissional" name="experienciaProfissional"  rows="5"></textarea>
+    <textarea class="form-control" id="experienciaProfissional" name="experienciaProfissional" rows="5">{{pessoa.experienciaProfissional}}</textarea>
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>

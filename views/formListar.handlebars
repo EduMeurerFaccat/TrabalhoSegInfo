@@ -1,0 +1,19 @@
+{{#if pessoa}}
+{{> listarUm this}}
+{{else}}
+<form method="get" action="/listarUm">
+  <input type="hidden" name="token" value="{{token}}" />
+  <div class="form-group">
+    <label for="nome">Nome: </label>
+    <input type="text" class="form-control" id="nome" name="nome" placeholder="Informe nome">
+    <!--<small id="emailHelp" name="emailHelp"  class="form-text text-muted"></small>-->
+  </div>
+  <div class="form-group">
+    <label for="email">E-mail</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+      placeholder="Informe email">
+    <!--<small id="emailHelp" name="emailHelp"  class="form-text text-muted"></small>-->
+  </div>
+  <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+{{/if}}

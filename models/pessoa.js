@@ -1,6 +1,6 @@
-import {Sequelize} from 'sequelize'
+import { Sequelize } from 'sequelize'
 import { database } from '../config/config.js';
-import {faker} from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
 let pessoaExemplo = {
     nome: faker.name.findName(),

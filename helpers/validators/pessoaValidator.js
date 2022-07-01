@@ -1,4 +1,5 @@
 import { pessoaExemplo } from "../../models/pessoa.js";
+import crypto, { randomBytes } from 'node:crypto'
 
 function insereErro(arr, erro, msg){
     arr.push({erro, msg});
